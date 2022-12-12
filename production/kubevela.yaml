@@ -11,7 +11,7 @@ spec:
   source:
     chart: vela-core
     repoURL: https://charts.kubevela.net/core
-    targetRevision: "1.6.0"
+    targetRevision: "1.6.4"
   destination:
     namespace: vela-system
     server: https://kubernetes.default.svc
