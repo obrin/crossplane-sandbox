@@ -9,7 +9,7 @@ spec:
   project: production
   source:
     path: team-app-reqs
-    repoURL: https://github.com/obrin/crossplane-kubevela-argocd-demo
+    repoURL: https://github.com/obrin/crossplane-sandbox
     targetRevision: HEAD
   destination:
     server: team-a
