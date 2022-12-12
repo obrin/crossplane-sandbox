@@ -11,17 +11,17 @@ spec:
         ports:
          - port: 8000
            expose: true
-      # traits:
-      #   - type: scaler
-      #     properties:
-      #       replicas: 1
-  # policies:
-  #   - name: target-default
-  #     type: topology
-  #     properties:
-  #       # The cluster with name local is installed the KubeVela.
-  #       clusters: ["local"]
-  #       namespace: "default"
+      traits:
+        - type: scaler
+          properties:
+            replicas: 1
+  policies:
+    - name: target-default
+      type: topology
+      properties:
+        # The cluster with name local is installed the KubeVela.
+        clusters: ["local"]
+        namespace: "default"
   #   - name: target-prod
   #     type: topology
   #     properties:
@@ -37,12 +37,12 @@ spec:
   #             - type: scaler
   #               properties:
   #                 replicas: 2
-  # workflow:
-  #   steps:
-  #     - name: deploy2default
-  #       type: deploy
-  #       properties:
-  #         policies: ["target-default"]
+  workflow:
+    steps:
+      - name: deploy2default
+        type: deploy
+        properties:
+          policies: ["target-default"]
   #     - name: manual-approval
   #       type: suspend
   #     - name: deploy2prod
