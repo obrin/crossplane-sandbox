@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: production
+  source:
+    chart: vela-core
+    repoURL: https://charts.kubevela.net/core
+    targetRevision: "1.6.0"
+  destination:
+    namespace: vela-system
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
