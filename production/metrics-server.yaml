@@ -15,9 +15,8 @@ spec:
     helm:
       releaseName: metrics-server
       parameters:
-        - name: args
-          value: 
-            - --kubelet-insecure-tls
+        - name: args[0]
+          value: --kubelet-insecure-tls
   destination:
     namespace: kube-system
     server: https://kubernetes.default.svc
