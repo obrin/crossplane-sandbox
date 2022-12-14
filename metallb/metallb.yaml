@@ -1,0 +1,12 @@
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: metallb
+spec:
+  forProvider:
+    chart:
+      name: metallb
+      repository: https://metallb.github.io/metallb
+      version: 0.13.7
+    namespace: metallb-system
