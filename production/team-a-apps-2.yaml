@@ -1,21 +1,23 @@
-apiVersion: core.oam.dev/v1beta1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: first-vela-app-2
+  name: team-a-apps-2
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
-  components:
-  - name: database-config
-    type: kustomize
-    properties:
-      repoType: git
-      # replace it with your repo url
-      url: https://github.com/obrin/crossplane-sandbox
-      # replace it with your git secret if it's a private repo
-      # secretRef: git-secret
-      # the pull interval time, set to 10m since the infrastructure is steady
-      pullInterval: 5m
-      git:
-        # the branch name
-        branch: main
-      # the path to sync
-      path: ./team-a-apps-2
+  project: production
+  source:
+    path: team-a-apps-2
+    repoURL: https://github.com/obrin/crossplane-sandbox
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
+    syncOptions:
+    - CreateNamespace=true
