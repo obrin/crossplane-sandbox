@@ -15,16 +15,16 @@ spec:
         - type: scaler
           properties:
             replicas: 1
-  # policies:
-  #   - name: target-default
-  #     type: topology
-  #     properties:
-  #       # The cluster with name local is installed the KubeVela.
-  #       clusters: ["local"]
-  #       namespace: "production"
-  # workflow:
-  #   steps:
-  #     - name: deploy2default
-  #       type: deploy
-  #       properties:
-  #         policies: ["target-default"]
+  policies:
+    - name: target-default
+      type: topology
+      properties:
+        # The cluster with name local is installed the KubeVela.
+        clusters: ["local"]
+        namespace: "production"
+  workflow:
+    steps:
+      - name: deploy2default
+        type: deploy
+        properties:
+          policies: ["target-default"]
