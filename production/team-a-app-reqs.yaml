@@ -8,7 +8,7 @@ metadata:
 spec:
   project: production
   source:
-    path: team-app-reqs
+    path: team-a-app-reqs
     repoURL: https://github.com/obrin/crossplane-sandbox
     targetRevision: HEAD
   destination:

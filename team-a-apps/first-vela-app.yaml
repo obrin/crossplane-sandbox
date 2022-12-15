@@ -21,7 +21,7 @@ spec:
       properties:
         # The cluster with name local is installed the KubeVela.
         clusters: ["local"]
-        namespace: "default"
+        # namespace: "default"
   #   - name: target-prod
   #     type: topology
   #     properties:
