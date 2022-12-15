@@ -8,9 +8,9 @@ spec:
       type: webservice
       properties:
         image: kong/httpbin
-        # ports:
-        #  - port: 80
-        #    expose: false
+        ports:
+         - port: 80
+           expose: false
       traits:
         - type: scaler
           properties:
