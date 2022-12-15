@@ -18,4 +18,4 @@ spec:
         # the branch name
         branch: main
       # the path to sync
-      path: ./team-a-apps-2/app
+      path: ./app
