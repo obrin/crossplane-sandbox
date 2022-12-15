@@ -13,6 +13,7 @@ spec:
     repoURL: https://github.com/obrin/crossplane-sandbox
     targetRevision: HEAD
   destination:
+    namespace: metallb-system
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
