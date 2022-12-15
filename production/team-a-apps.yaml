@@ -11,8 +11,8 @@ spec:
     path: team-a-apps
     repoURL: https://github.com/obrin/crossplane-sandbox
     targetRevision: HEAD
-    plugin:
-      name: vela
+    # plugin:
+    #   name: vela
   destination:
     server: https://kubernetes.default.svc
     namespace: production
